@@ -43,6 +43,34 @@ class AuthorDocument(Document):
 @registry.register_document
 class ContentDocument(Document):
 
+    creation_info = fields.ObjectField(
+        properties={
+            "created_at": fields.TextField(),
+            "timestamp": fields.TextField(),
+        }
+    )
+
+    context = fields.ObjectField(
+        properties={
+            "main_text": fields.TextField(),
+            "token_count": fields.IntegerField(),
+            "char_count": fields.IntegerField(),
+            "tag_count": fields.IntegerField(),
+        }
+    )
+    
+    context = fields.ObjectField(
+        properties={
+            "likes_id": fields.TextField(),
+            "likes_count": fields.TextField(),
+            "views_id": fields.TextField(),
+            "views_count": fields.IntegerField(),
+            "comments_id": fields.IntegerField(),
+            "comments_count": fields.IntegerField(),
+        }
+    )
+
+
     class Index:
         name = "content"
 
