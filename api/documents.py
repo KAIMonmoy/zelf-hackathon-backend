@@ -59,7 +59,7 @@ class ContentDocument(Document):
         }
     )
     
-    context = fields.ObjectField(
+    stats = fields.ObjectField(
         properties={
             "likes_id": fields.TextField(),
             "likes_count": fields.TextField(),
@@ -67,6 +67,13 @@ class ContentDocument(Document):
             "views_count": fields.IntegerField(),
             "comments_id": fields.IntegerField(),
             "comments_count": fields.IntegerField(),
+        }
+    )
+
+    media = fields.ObjectField(
+        properties={
+            "media_type": fields.TextField(),
+            "url": fields.TextField(),
         }
     )
 

@@ -42,6 +42,10 @@ def fetch_contents():
         print('Failed to fetch data. Error:', ex)
         return
 
+    if len(data['data']) == 0:
+        print("No data found")
+        return
+
     api_page_info.page_status = 'IN_PROGRESS'
     api_page_info.save()
 

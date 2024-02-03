@@ -25,7 +25,9 @@ SECRET_KEY = 'django-insecure-t7&(^jcdz$-a_(^_$fll82#o(r!6jj466i&m#cz5t3#-#!9v+k
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS=[
+    '127.0.0.1',
+]
 
 
 # Application definition
@@ -42,6 +44,7 @@ INSTALLED_APPS = [
     'django_elasticsearch_dsl',
     'django_celery_results',
     'django_celery_beat',
+    'corsheaders',
     # ============ Local Apps ============
     'contents',
     'api',
@@ -55,6 +58,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'core.urls'
