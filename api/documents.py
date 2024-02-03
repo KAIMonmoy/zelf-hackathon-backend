@@ -9,6 +9,21 @@ from django.dispatch import receiver
 @registry.register_document
 class AuthorDocument(Document):
 
+    info = fields.ObjectField(
+        properties={
+            "name": fields.TextField(),
+            "platform": fields.TextField(),
+        }
+    )
+
+    stats = fields.NestedField(
+        properties={
+            "follower_id": fields.IntegerField(),
+            "follower_count": fields.IntegerField(),
+        }
+    )
+
+
     class Index:
         name = "author"
 
